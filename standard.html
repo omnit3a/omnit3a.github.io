@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-11-14 Tue 17:34 -->
+<!-- 2023-11-14 Tue 17:49 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>omnit3a's C programming standard</title>
@@ -201,42 +201,42 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgaa414b6">1. Source Code Style</a>
+<li><a href="#org92420e3">1. Source Code Style</a>
 <ul>
-<li><a href="#org4de8ac0">1.1. Indentation</a></li>
-<li><a href="#orgff4fee7">1.2. Curly Brace Placement</a></li>
-<li><a href="#org23acddf">1.3. Line Length</a></li>
-<li><a href="#org09d47d1">1.4. Naming Conventions</a></li>
-<li><a href="#org81f02c9">1.5. Nesting</a></li>
-<li><a href="#orgb14b73f">1.6. #include Directives</a></li>
-<li><a href="#orgbeaff44">1.7. Pointer declaration</a></li>
+<li><a href="#org8c465b1">1.1. Indentation</a></li>
+<li><a href="#org706a17a">1.2. Curly Brace Placement</a></li>
+<li><a href="#orgf2301f7">1.3. Line Length</a></li>
+<li><a href="#org5c53462">1.4. Naming Conventions</a></li>
+<li><a href="#orgc2e5a03">1.5. Nesting</a></li>
+<li><a href="#org80cf1b0">1.6. #include Directives</a></li>
+<li><a href="#org0833380">1.7. Pointer declaration</a></li>
 </ul>
 </li>
-<li><a href="#orgf1c97e1">2. Design Conventions</a>
+<li><a href="#org5758b7e">2. Design Conventions</a>
 <ul>
-<li><a href="#org3983b2b">2.1. Inter-function Communication</a></li>
-<li><a href="#org0f352e8">2.2. Function Responsibility</a></li>
-<li><a href="#org67a69f1">2.3. Text-based Data</a></li>
+<li><a href="#orga59c46f">2.1. Inter-function Communication</a></li>
+<li><a href="#org9537a9b">2.2. Function Responsibility</a></li>
+<li><a href="#orgd814a93">2.3. Text-based Data</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgaa414b6" class="outline-2">
-<h2 id="orgaa414b6"><span class="section-number-2">1.</span> Source Code Style</h2>
+<div id="outline-container-org92420e3" class="outline-2">
+<h2 id="org92420e3"><span class="section-number-2">1.</span> Source Code Style</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org4de8ac0" class="outline-3">
-<h3 id="org4de8ac0"><span class="section-number-3">1.1.</span> Indentation</h3>
+<div id="outline-container-org8c465b1" class="outline-3">
+<h3 id="org8c465b1"><span class="section-number-3">1.1.</span> Indentation</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Tabs, not spaces. Tabs must be eight characters wide.
 </p>
 </div>
 </div>
-<div id="outline-container-orgff4fee7" class="outline-3">
-<h3 id="orgff4fee7"><span class="section-number-3">1.2.</span> Curly Brace Placement</h3>
+<div id="outline-container-org706a17a" class="outline-3">
+<h3 id="org706a17a"><span class="section-number-3">1.2.</span> Curly Brace Placement</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 The opening curly brace must be on the same line
@@ -244,8 +244,8 @@ as the declaration, not on the line below it.
 </p>
 </div>
 </div>
-<div id="outline-container-org23acddf" class="outline-3">
-<h3 id="org23acddf"><span class="section-number-3">1.3.</span> Line Length</h3>
+<div id="outline-container-orgf2301f7" class="outline-3">
+<h3 id="orgf2301f7"><span class="section-number-3">1.3.</span> Line Length</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 The shorter the line, the better. Line length must never
@@ -253,8 +253,8 @@ exceed 80 characters.
 </p>
 </div>
 </div>
-<div id="outline-container-org09d47d1" class="outline-3">
-<h3 id="org09d47d1"><span class="section-number-3">1.4.</span> Naming Conventions</h3>
+<div id="outline-container-org5c53462" class="outline-3">
+<h3 id="org5c53462"><span class="section-number-3">1.4.</span> Naming Conventions</h3>
 <div class="outline-text-3" id="text-1-4">
 <p>
 Everything must be written with snake<sub>case</sub>. All names must be in
@@ -275,16 +275,16 @@ All struct names must be suffixed with "<sub>s</sub>".
 </p>
 </div>
 </div>
-<div id="outline-container-org81f02c9" class="outline-3">
-<h3 id="org81f02c9"><span class="section-number-3">1.5.</span> Nesting</h3>
+<div id="outline-container-orgc2e5a03" class="outline-3">
+<h3 id="orgc2e5a03"><span class="section-number-3">1.5.</span> Nesting</h3>
 <div class="outline-text-3" id="text-1-5">
 <p>
 Never nest code more than three layers deep. Ever.
 </p>
 </div>
 </div>
-<div id="outline-container-orgb14b73f" class="outline-3">
-<h3 id="orgb14b73f"><span class="section-number-3">1.6.</span> #include Directives</h3>
+<div id="outline-container-org80cf1b0" class="outline-3">
+<h3 id="org80cf1b0"><span class="section-number-3">1.6.</span> #include Directives</h3>
 <div class="outline-text-3" id="text-1-6">
 <p>
 #include directives are to be ordered according to length.
@@ -302,8 +302,8 @@ The following is an example:
 </div>
 </div>
 
-<div id="outline-container-orgbeaff44" class="outline-3">
-<h3 id="orgbeaff44"><span class="section-number-3">1.7.</span> Pointer declaration</h3>
+<div id="outline-container-org0833380" class="outline-3">
+<h3 id="org0833380"><span class="section-number-3">1.7.</span> Pointer declaration</h3>
 <div class="outline-text-3" id="text-1-7">
 <p>
 All asterisks used in pointer declaration must have one space
@@ -314,12 +314,12 @@ put a space between the asterisk and the base datatype.
 </div>
 </div>
 </div>
-<div id="outline-container-orgf1c97e1" class="outline-2">
-<h2 id="orgf1c97e1"><span class="section-number-2">2.</span> Design Conventions</h2>
+<div id="outline-container-org5758b7e" class="outline-2">
+<h2 id="org5758b7e"><span class="section-number-2">2.</span> Design Conventions</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org3983b2b" class="outline-3">
-<h3 id="org3983b2b"><span class="section-number-3">2.1.</span> Inter-function Communication</h3>
+<div id="outline-container-orga59c46f" class="outline-3">
+<h3 id="orga59c46f"><span class="section-number-3">2.1.</span> Inter-function Communication</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 All user-written functions must follow a convention for
@@ -330,11 +330,13 @@ Every user-written function must return an "int".
 
 <p>
 The following are the standard return codes:
--1: Print an error message, free all allocated
-    memory, then exit the program.
-0: False (Function failed)
-1: True (Function succeeded)
 </p>
+<dl class="org-dl">
+<dt>-1</dt><dd>Print an error message, free all allocated
+memory, then exit the program.</dd>
+<dt>0</dt><dd>False (Function failed)</dd>
+<dt>1</dt><dd>True (Function succeeded)</dd>
+</dl>
 
 <p>
 Any other return codes are defined within a program. These are
@@ -348,8 +350,8 @@ that variable.
 </p>
 </div>
 </div>
-<div id="outline-container-org0f352e8" class="outline-3">
-<h3 id="org0f352e8"><span class="section-number-3">2.2.</span> Function Responsibility</h3>
+<div id="outline-container-org9537a9b" class="outline-3">
+<h3 id="org9537a9b"><span class="section-number-3">2.2.</span> Function Responsibility</h3>
 <div class="outline-text-3" id="text-2-2">
 <p>
 Every function should only have one responsibility. Don't write
@@ -358,8 +360,8 @@ one job.
 </p>
 </div>
 </div>
-<div id="outline-container-org67a69f1" class="outline-3">
-<h3 id="org67a69f1"><span class="section-number-3">2.3.</span> Text-based Data</h3>
+<div id="outline-container-orgd814a93" class="outline-3">
+<h3 id="orgd814a93"><span class="section-number-3">2.3.</span> Text-based Data</h3>
 <div class="outline-text-3" id="text-2-3">
 <p>
 If a program is going to be dealing with definitions of data, then
@@ -378,7 +380,7 @@ as soon as possible. A good format for this is JSON.
 <div id="postamble" class="status">
 <p class="date">Date: 2023-11-14</p>
 <p class="author">Author: omnit3a</p>
-<p class="date">Created: 2023-11-14 Tue 17:34</p>
+<p class="date">Created: 2023-11-14 Tue 17:49</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
