@@ -1,0 +1,145 @@
+#+title: Type System for F888
+#+author: omnit3a
+#+startup: indent
+
+* Notation
+Note: The notation of types is specified within
+section 3 of this document (List of Types).
+** Subtyping
+Let α be the name of the base type, and let the name
+of the subtype be A.
+Given this definition, the subtype of a type is
+specified using the following syntax:
+    α (A)
+
+* Terminology
+** "Variables"
+The term "variable", when used within this document,
+represents any form of data which has a type.
+
+* List of Types
+** Natural Numbers (ℕ)
+This type will be referred to as ℕ within this document,
+and as "Nat" within the syntax of F888.
+
+** Booleans (𝔹)
+Boolean types are types which specify that the object
+being typed has exactly two possible states.
+These two states may be redefined, however by default
+the two states are True and False.
+
+This type will be referred to as 𝔹 within this document,
+and as "Bool" within the syntax of F888
+
+** Unions (∪)
+A Value must be of a union type if said value may take on
+multiple different types. The said value may only be of
+one type at any given time. A union type is immutable,
+meaning that the list of types that the value may be are
+fixed, and cannot be changed. An example of a union type
+would be a union named "A" which contains the subtypes ℕ and 𝔹.
+The types stored within the union may not be changed.
+Given the previous union example, a variable named "e"
+which is of type "A" may be of either subtype ℕ or 𝔹, but not
+both at the same time.
+
+The union type will be referred to as 𝕌 within this document,
+and as "Union" within the syntax of F888.
+
+** Tuples (𝕋)
+This type may use any other type as a subtype, allowing
+for the contents a tuple to contain data of any type.
+All of the values contained within any given tuple must
+be of the same type.
+
+This type will be referred to as 𝕋 within this document.
+and as "List" within the syntax of F888.
+
+** Functions (λ)
+This data type may use any other type as a subtype,
+allowing for functions which return any type.
+It is important to note that all functions are anonymous
+by default. A variable may be assigned of a function type,
+which allows the function to be referred to by the name of
+the variable which it is assigned to.
+Functions may accept data of any type as an argument(s),
+and return any data of any type as an output.
+
+A function may also accept a type as arguments.
+If this is the case, then the function must also output a
+type. The inverse also hold, that being that a function may
+output a type, in which case, that function must also accept
+a type(s) as its arguments.
+Functions which accept a type(s) as input or outputs a type
+are classified under the subtype of a Constructor.
+
+Functions may only accept one argument. In order to simulate
+a function which accepts more than one argument, a tuple
+containing the arguments must be passed.
+
+This type will be referred to as λ within this document,
+and as "Func" within the syntax of F888.
+
+** Constructors (Λ)
+A constructor is any function which accepts a type as its input.
+If a function accepts a type as its input, then it also must output
+a type. The inverse is also true.
+
+Constructors will be referred to as Λ within this document,
+and as "Cons" within the syntax of F888.
+* Typing
+** Type System Strength
+F888 is fully strongly typed.
+No variable may have its type changed or reinterpreted.
+
+** Static VS Dynamic Typing
+F888 is statically typed. All types are specified
+at compile time, according to the syntax of the source code.
+
+There is also a type checker, which verifies that the types
+that have been specified will not result in a type error.
+If a variable's type does not match its usage, a type error
+would occur.
+
+* Syntax
+** Tuples
+Let α be the name of tuple containing two natural numbers,
+and let the contents of α be named x and y respectively.
+Given this defintion, the contents of tuple α would be
+specified using the following syntax:
+    α [x, y] : List (Nat)
+    
+In the case of a tuple being used as a subtype, only the type
+of the tuple is used. For example, in the case of a function
+named α, which accepts two natural numbers as its arguments and
+has a natural number as its output, the type of α would be written
+as the following:
+    Func (List [Nat, Nat]) -> Nat
+
+For the syntax for passing a tuple as the argument of a function,
+see the the following section.
+
+** Functions Accepting Multiple Arguments
+Let α be the name of a function which accepts two arguments of type
+ℕ, which are named x and y respectively. Let the output of α also be
+of type ℕ.
+Given this definition, the following syntax would be used to specify
+the arguments of α:
+    α.[x, y] : Func (List [Nat, Nat]) -> Nat
+
+** Type Specification
+The type of a variable must always be specified.
+Let α be the name of a (non-function) variable, and let A
+be the type. Given this definition, the type of α is
+specified using the following syntax:
+    α : A 
+
+If a variable is a function, then the type of both its output
+and its input(s) must be specified. Let α be the name of
+function, and let α accept two variables of type ℕ, and
+let α output a variable of type ℕ. Let the name of the
+arguments of α be x and y respectively.
+In this example, α returns the sum of x and y.
+Given this definition, the type of α is specified using
+the following syntax:
+    α.[x, y] : Func (List [Nat, Nat]) ->  Nat
