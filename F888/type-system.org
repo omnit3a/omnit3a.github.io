@@ -10,7 +10,9 @@ Let α be the name of the base type, and let the name
 of the subtype be A.
 Given this definition, the subtype of a type is
 specified using the following syntax:
-    α (A)
+#+begin_src text
+          α (A)
+#+end_src
 
 * Terminology
 ** "Variables"
@@ -107,14 +109,18 @@ Let α be the name of tuple containing two natural numbers,
 and let the contents of α be named x and y respectively.
 Given this defintion, the contents of tuple α would be
 specified using the following syntax:
-    α [x, y] : List (Nat)
-    
+#+begin_src text
+          α [x, y] : List (Nat)
+#+end_src
+
 In the case of a tuple being used as a subtype, only the type
 of the tuple is used. For example, in the case of a function
 named α, which accepts two natural numbers as its arguments and
 has a natural number as its output, the type of α would be written
 as the following:
-    Func (List [Nat, Nat]) -> Nat
+#+begin_src text
+          Func (List [Nat, Nat]) -> Nat
+#+end_src
 
 For the syntax for passing a tuple as the argument of a function,
 see the the following section.
@@ -125,14 +131,18 @@ Let α be the name of a function which accepts two arguments of type
 of type ℕ.
 Given this definition, the following syntax would be used to specify
 the arguments of α:
-    α.[x, y] : Func (List [Nat, Nat]) -> Nat
+#+begin_src text
+          α.[x, y] : Func (List [Nat, Nat]) -> Nat
+#+end_src
 
 ** Type Specification
 The type of a variable must always be specified.
 Let α be the name of a (non-function) variable, and let A
 be the type. Given this definition, the type of α is
 specified using the following syntax:
-    α : A 
+#+begin_src text
+          α : A
+#+end_src
 
 If a variable is a function, then the type of both its output
 and its input(s) must be specified. Let α be the name of
@@ -142,4 +152,6 @@ arguments of α be x and y respectively.
 In this example, α returns the sum of x and y.
 Given this definition, the type of α is specified using
 the following syntax:
-    α.[x, y] : Func (List [Nat, Nat]) ->  Nat
+#+begin_src text
+          α.[x, y] : Func (List [Nat, Nat]) -> Nat
+#+end_src
