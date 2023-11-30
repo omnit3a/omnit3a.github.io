@@ -76,8 +76,10 @@ Functions which accept a type(s) as input or outputs a type
 are classified under the subtype of a Constructor.
 
 Functions may only accept one argument. In order to simulate
-a function which accepts more than one argument, a tuple
-containing the arguments must be passed.
+a function which accepts more than one argument, currying is used.
+It is important to note that the syntax of function declaration
+allows for multiple arguments. In the case of multiple arguments
+being specified, a function will be curried at runtime.
 
 This type will be referred to as λ within this document,
 and as "Func" within the syntax of F888.
@@ -120,21 +122,11 @@ named α, which accepts two natural numbers as its arguments and
 has a natural number as its output, the type of α would be written
 as the following:
 #+begin_src text
-          Func (List [Nat, Nat]) -> Nat
+          Func (List (Nat)) -> Nat
 #+end_src
-
-For the syntax for passing a tuple as the argument of a function,
-see the the following section.
-
-** Functions Accepting Multiple Arguments
-Let α be the name of a function which accepts two arguments of type
-ℕ, which are named x and y respectively. Let the output of α also be
-of type ℕ.
-Given this definition, the following syntax would be used to specify
-the arguments of α:
-#+begin_src text
-          α.[x, y] : Func (List [Nat, Nat]) -> Nat
-#+end_src
+Note that regardless of the amount of items in a tuple, only one
+type is specified. This type is applied to all the elements in
+the tuple.
 
 ** Type Specification
 The type of a variable must always be specified.
@@ -154,5 +146,5 @@ In this example, α returns the sum of x and y.
 Given this definition, the type of α is specified using
 the following syntax:
 #+begin_src text
-          α.[x, y] : Func (List [Nat, Nat]) -> Nat
+          α.x+y  : Func (Nat, Nat) -> Nat
 #+end_src
