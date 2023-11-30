@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-11-30 Thu 11:21 -->
+<!-- 2023-11-30 Thu 11:29 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Type System for F888</title>
@@ -201,53 +201,53 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org3cae76b">1. Notation</a>
+<li><a href="#org256e875">1. Notation</a>
 <ul>
-<li><a href="#org8c2f79b">1.1. Subtyping</a></li>
+<li><a href="#org31f78a4">1.1. Subtyping</a></li>
 </ul>
 </li>
-<li><a href="#org0162d5b">2. Terminology</a>
+<li><a href="#orgca6241e">2. Terminology</a>
 <ul>
-<li><a href="#org3a216e3">2.1. "Variables"</a></li>
+<li><a href="#orga31deba">2.1. "Variables"</a></li>
 </ul>
 </li>
-<li><a href="#orge8cf086">3. List of Types</a>
+<li><a href="#org0edc62d">3. List of Types</a>
 <ul>
-<li><a href="#org05bdb44">3.1. Natural Numbers (ℕ)</a></li>
-<li><a href="#org164b8ca">3.2. Booleans (𝔹)</a></li>
-<li><a href="#org9fa8750">3.3. Unions (∪)</a></li>
-<li><a href="#org354d253">3.4. Tuples (𝕋)</a></li>
-<li><a href="#orgb4b1c8f">3.5. Functions (λ)</a></li>
-<li><a href="#org5e27996">3.6. Constructors (Λ)</a></li>
+<li><a href="#org1aa9c5c">3.1. Natural Numbers (ℕ)</a></li>
+<li><a href="#org63124f0">3.2. Booleans (𝔹)</a></li>
+<li><a href="#orgcec0a90">3.3. Unions (∪)</a></li>
+<li><a href="#org51fed5b">3.4. Tuples (𝕋)</a></li>
+<li><a href="#org710f818">3.5. Functions (λ)</a></li>
+<li><a href="#org0456e8a">3.6. Constructors (Λ)</a></li>
 </ul>
 </li>
-<li><a href="#orgf75c732">4. Typing</a>
+<li><a href="#org2e1710c">4. Typing</a>
 <ul>
-<li><a href="#org426132f">4.1. Type System Strength</a></li>
-<li><a href="#org49f9a18">4.2. Static VS Dynamic Typing</a></li>
+<li><a href="#org65b465b">4.1. Type System Strength</a></li>
+<li><a href="#orgd64e9ed">4.2. Static VS Dynamic Typing</a></li>
 </ul>
 </li>
-<li><a href="#org16a77e1">5. Syntax</a>
+<li><a href="#org1371f21">5. Syntax</a>
 <ul>
-<li><a href="#orgb2dc50d">5.1. Tuples</a></li>
-<li><a href="#orgef93988">5.2. Functions Accepting Multiple Arguments</a></li>
-<li><a href="#orge1e7349">5.3. Type Specification</a></li>
+<li><a href="#org524ac8b">5.1. Tuples</a></li>
+<li><a href="#org769a9d4">5.2. Functions Accepting Multiple Arguments</a></li>
+<li><a href="#orgc08b64d">5.3. Type Specification</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org3cae76b" class="outline-2">
-<h2 id="org3cae76b"><span class="section-number-2">1.</span> Notation</h2>
+<div id="outline-container-org256e875" class="outline-2">
+<h2 id="org256e875"><span class="section-number-2">1.</span> Notation</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Note: The notation of types is specified within
 section 3 of this document (List of Types).
 </p>
 </div>
-<div id="outline-container-org8c2f79b" class="outline-3">
-<h3 id="org8c2f79b"><span class="section-number-3">1.1.</span> Subtyping</h3>
+<div id="outline-container-org31f78a4" class="outline-3">
+<h3 id="org31f78a4"><span class="section-number-3">1.1.</span> Subtyping</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 Let α be the name of the base type, and let the name
@@ -263,12 +263,12 @@ specified using the following syntax:
 </div>
 </div>
 
-<div id="outline-container-org0162d5b" class="outline-2">
-<h2 id="org0162d5b"><span class="section-number-2">2.</span> Terminology</h2>
+<div id="outline-container-orgca6241e" class="outline-2">
+<h2 id="orgca6241e"><span class="section-number-2">2.</span> Terminology</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org3a216e3" class="outline-3">
-<h3 id="org3a216e3"><span class="section-number-3">2.1.</span> "Variables"</h3>
+<div id="outline-container-orga31deba" class="outline-3">
+<h3 id="orga31deba"><span class="section-number-3">2.1.</span> "Variables"</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 The term "variable", when used within this document,
@@ -278,12 +278,12 @@ represents any form of data which has a type.
 </div>
 </div>
 
-<div id="outline-container-orge8cf086" class="outline-2">
-<h2 id="orge8cf086"><span class="section-number-2">3.</span> List of Types</h2>
+<div id="outline-container-org0edc62d" class="outline-2">
+<h2 id="org0edc62d"><span class="section-number-2">3.</span> List of Types</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org05bdb44" class="outline-3">
-<h3 id="org05bdb44"><span class="section-number-3">3.1.</span> Natural Numbers (ℕ)</h3>
+<div id="outline-container-org1aa9c5c" class="outline-3">
+<h3 id="org1aa9c5c"><span class="section-number-3">3.1.</span> Natural Numbers (ℕ)</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 This type will be referred to as ℕ within this document,
@@ -292,8 +292,8 @@ and as "Nat" within the syntax of F888.
 </div>
 </div>
 
-<div id="outline-container-org164b8ca" class="outline-3">
-<h3 id="org164b8ca"><span class="section-number-3">3.2.</span> Booleans (𝔹)</h3>
+<div id="outline-container-org63124f0" class="outline-3">
+<h3 id="org63124f0"><span class="section-number-3">3.2.</span> Booleans (𝔹)</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 Boolean types are types which specify that the object
@@ -309,8 +309,8 @@ and as "Bool" within the syntax of F888
 </div>
 </div>
 
-<div id="outline-container-org9fa8750" class="outline-3">
-<h3 id="org9fa8750"><span class="section-number-3">3.3.</span> Unions (∪)</h3>
+<div id="outline-container-orgcec0a90" class="outline-3">
+<h3 id="orgcec0a90"><span class="section-number-3">3.3.</span> Unions (∪)</h3>
 <div class="outline-text-3" id="text-3-3">
 <p>
 A Value must be of a union type if said value may take on
@@ -332,8 +332,8 @@ and as "Union" within the syntax of F888.
 </div>
 </div>
 
-<div id="outline-container-org354d253" class="outline-3">
-<h3 id="org354d253"><span class="section-number-3">3.4.</span> Tuples (𝕋)</h3>
+<div id="outline-container-org51fed5b" class="outline-3">
+<h3 id="org51fed5b"><span class="section-number-3">3.4.</span> Tuples (𝕋)</h3>
 <div class="outline-text-3" id="text-3-4">
 <p>
 This type may use any other type as a subtype, allowing
@@ -349,8 +349,8 @@ and as "List" within the syntax of F888.
 </div>
 </div>
 
-<div id="outline-container-orgb4b1c8f" class="outline-3">
-<h3 id="orgb4b1c8f"><span class="section-number-3">3.5.</span> Functions (λ)</h3>
+<div id="outline-container-org710f818" class="outline-3">
+<h3 id="org710f818"><span class="section-number-3">3.5.</span> Functions (λ)</h3>
 <div class="outline-text-3" id="text-3-5">
 <p>
 This data type may use any other type as a subtype,
@@ -386,8 +386,8 @@ and as "Func" within the syntax of F888.
 </div>
 </div>
 
-<div id="outline-container-org5e27996" class="outline-3">
-<h3 id="org5e27996"><span class="section-number-3">3.6.</span> Constructors (Λ)</h3>
+<div id="outline-container-org0456e8a" class="outline-3">
+<h3 id="org0456e8a"><span class="section-number-3">3.6.</span> Constructors (Λ)</h3>
 <div class="outline-text-3" id="text-3-6">
 <p>
 A constructor is any function which accepts a type as its input.
@@ -402,12 +402,12 @@ and as "Cons" within the syntax of F888.
 </div>
 </div>
 </div>
-<div id="outline-container-orgf75c732" class="outline-2">
-<h2 id="orgf75c732"><span class="section-number-2">4.</span> Typing</h2>
+<div id="outline-container-org2e1710c" class="outline-2">
+<h2 id="org2e1710c"><span class="section-number-2">4.</span> Typing</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org426132f" class="outline-3">
-<h3 id="org426132f"><span class="section-number-3">4.1.</span> Type System Strength</h3>
+<div id="outline-container-org65b465b" class="outline-3">
+<h3 id="org65b465b"><span class="section-number-3">4.1.</span> Type System Strength</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 F888 is fully strongly typed.
@@ -416,8 +416,8 @@ No variable may have its type changed or reinterpreted.
 </div>
 </div>
 
-<div id="outline-container-org49f9a18" class="outline-3">
-<h3 id="org49f9a18"><span class="section-number-3">4.2.</span> Static VS Dynamic Typing</h3>
+<div id="outline-container-orgd64e9ed" class="outline-3">
+<h3 id="orgd64e9ed"><span class="section-number-3">4.2.</span> Static VS Dynamic Typing</h3>
 <div class="outline-text-3" id="text-4-2">
 <p>
 F888 is statically typed. All types are specified
@@ -434,12 +434,12 @@ would occur.
 </div>
 </div>
 
-<div id="outline-container-org16a77e1" class="outline-2">
-<h2 id="org16a77e1"><span class="section-number-2">5.</span> Syntax</h2>
+<div id="outline-container-org1371f21" class="outline-2">
+<h2 id="org1371f21"><span class="section-number-2">5.</span> Syntax</h2>
 <div class="outline-text-2" id="text-5">
 </div>
-<div id="outline-container-orgb2dc50d" class="outline-3">
-<h3 id="orgb2dc50d"><span class="section-number-3">5.1.</span> Tuples</h3>
+<div id="outline-container-org524ac8b" class="outline-3">
+<h3 id="org524ac8b"><span class="section-number-3">5.1.</span> Tuples</h3>
 <div class="outline-text-3" id="text-5-1">
 <p>
 Let α be the name of tuple containing two natural numbers,
@@ -471,8 +471,8 @@ see the the following section.
 </div>
 </div>
 
-<div id="outline-container-orgef93988" class="outline-3">
-<h3 id="orgef93988"><span class="section-number-3">5.2.</span> Functions Accepting Multiple Arguments</h3>
+<div id="outline-container-org769a9d4" class="outline-3">
+<h3 id="org769a9d4"><span class="section-number-3">5.2.</span> Functions Accepting Multiple Arguments</h3>
 <div class="outline-text-3" id="text-5-2">
 <p>
 Let α be the name of a function which accepts two arguments of type
@@ -488,8 +488,8 @@ the arguments of α:
 </div>
 </div>
 
-<div id="outline-container-orge1e7349" class="outline-3">
-<h3 id="orge1e7349"><span class="section-number-3">5.3.</span> Type Specification</h3>
+<div id="outline-container-orgc08b64d" class="outline-3">
+<h3 id="orgc08b64d"><span class="section-number-3">5.3.</span> Type Specification</h3>
 <div class="outline-text-3" id="text-5-3">
 <p>
 The type of a variable must always be specified.
@@ -522,7 +522,7 @@ the following syntax:
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: omnit3a</p>
-<p class="date">Created: 2023-11-30 Thu 11:21</p>
+<p class="date">Created: 2023-11-30 Thu 11:29</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

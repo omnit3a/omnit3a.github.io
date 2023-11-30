@@ -89,6 +89,7 @@ a type. The inverse is also true.
 
 Constructors will be referred to as Λ within this document,
 and as "Cons" within the syntax of F888.
+
 * Typing
 ** Type System Strength
 F888 is fully strongly typed.
