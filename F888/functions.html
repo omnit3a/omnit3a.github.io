@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2023-11-30 Thu 13:01 -->
+<!-- 2023-11-30 Thu 13:48 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Functions in F888</title>
@@ -201,15 +201,15 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org3d3d7fa">1. Notation</a></li>
-<li><a href="#org4350382">2. Function Expression Definition</a></li>
-<li><a href="#orgc5abdc7">3. Recursive Functions</a></li>
+<li><a href="#orgcbf630a">1. Notation</a></li>
+<li><a href="#orgdbf0fd9">2. Function Expression Definition</a></li>
+<li><a href="#org5d3468a">3. Recursive Functions</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org3d3d7fa" class="outline-2">
-<h2 id="org3d3d7fa"><span class="section-number-2">1.</span> Notation</h2>
+<div id="outline-container-orgcbf630a" class="outline-2">
+<h2 id="orgcbf630a"><span class="section-number-2">1.</span> Notation</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <a href="./type-system.html">See Type System</a>
@@ -217,8 +217,8 @@
 </div>
 </div>
 
-<div id="outline-container-org4350382" class="outline-2">
-<h2 id="org4350382"><span class="section-number-2">2.</span> Function Expression Definition</h2>
+<div id="outline-container-orgdbf0fd9" class="outline-2">
+<h2 id="orgdbf0fd9"><span class="section-number-2">2.</span> Function Expression Definition</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Let α be the name of a function which accepts two arguments
@@ -252,8 +252,8 @@ defined includes the arguments as part of it's type information.
 </div>
 </div>
 
-<div id="outline-container-orgc5abdc7" class="outline-2">
-<h2 id="orgc5abdc7"><span class="section-number-2">3.</span> Recursive Functions</h2>
+<div id="outline-container-org5d3468a" class="outline-2">
+<h2 id="org5d3468a"><span class="section-number-2">3.</span> Recursive Functions</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 Functions whose expression includes recursion must have the <code>rec</code>
@@ -269,19 +269,25 @@ This function could be written as the following:
 </p>
 <div class="org-src-container">
 <pre class="src src-text">fac.(x) : Func (Nat) -&gt; Nat
-rec fac = do
+rec fac := do
     if x = 0
     then 1
     else x * fac (x - 1)
 end
 </pre>
 </div>
+
+<p>
+If a function is called from within itself without said function
+being prefixed with the <code>rec</code> keyword, then the function will not
+compile.
+</p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: omnit3a</p>
-<p class="date">Created: 2023-11-30 Thu 13:01</p>
+<p class="date">Created: 2023-11-30 Thu 13:48</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

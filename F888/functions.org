@@ -38,9 +38,13 @@ calculate the factorial of its input using recursion
 This function could be written as the following:
 #+begin_src text
           fac.(x) : Func (Nat) -> Nat
-          rec fac = do
+          rec fac := do
               if x = 0
               then 1
               else x * fac (x - 1)
           end
 #+end_src
+
+If a function is called from within itself without said function
+being prefixed with the =rec= keyword, then the function will not
+compile.
