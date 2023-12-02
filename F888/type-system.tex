@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage{amsfonts}
+\usepackage{enumerate}
+
+%opening
+\title{Type System for F888}
+\author{omnit3a}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+The type system of F888 is based upon the Hindley-Milner type system.
+
+\section{Formal Definition}
+\subsection{Variable Access}
+\begin{equation}
+	\frac
+		{x:\sigma \in \Gamma}
+		{\Gamma \vdash _{D} x : \sigma}
+\end{equation}
+
+\subsection{Application}
+\begin{equation}
+	\frac 
+		{\Gamma \vdash _{D} e_{0}: \tau \rightarrow \tau' \qquad \Gamma \vdash _{D} e_{1} : \tau}
+		{\Gamma \vdash _{D} e_{0} e_{1} : \tau'}
+\end{equation}
+
+\subsection{Abstraction}
+\begin{equation}
+	\frac
+		{\Gamma, x : \tau \vdash _{D} e : \tau'}
+		{\Gamma \vdash _{D} \lambda x.e:\tau \rightarrow \tau'}
+\end{equation}
+
+\subsection{Let Bindings}
+\begin{equation}
+	\frac
+		{\Gamma \vdash _{D} e_{0} : \sigma \qquad \Gamma, x:\sigma \vdash e_{1}:\tau}
+		{\Gamma \vdash _{D} \textup{ let }x = e_{0} \textup{ in }e_{1}:\tau}
+\end{equation}
+
+\subsection{Instantiation}
+\begin{equation}
+	\frac
+		{\Gamma \vdash _{D} e : \sigma' \qquad \sigma' \sqsubseteq \sigma}
+		{\Gamma \vdash _{D} e : \sigma}
+\end{equation}
+
+\subsection{Generalization}
+\begin{equation}
+	\frac
+		{\Gamma \vdash e : \sigma \qquad \alpha \notin \textup{ free}(\Gamma)}
+		{\Gamma \vdash _{D} e:\forall\alpha.\sigma}
+\end{equation}
+\hfill \break
+
+\section{Types}
+\subsection{Monotypes}
+An object is a monotype if said object is either a type constant (I.E. An integer, a String), or a type variable (I.E. $\alpha$ or $\beta$), where $\alpha$ or $\beta$ may be substituted for a type constant. Monotypes also include the type of a function application. For example, a function accepting an argument of type $\alpha$, and returning a value of type $\beta$ would be type $\alpha \rightarrow \beta$, thus being a monotype.
+\subsection{Polytypes}
+An object is a polytype if said object is a monotype, or if the type of said object is contains a variable bound by a type.
+
+\end{document}
